@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {useState, useEffect} from 'react';
 
 function App() {
+
+  const [users, setUsers] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.!!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="navbar">
+        <div className="navbar-logo">NU CONNECT</div>
+        <div className="navbar-search">
+          <input type="text" placeholder="Search . . ." className="search-bar"/>
+        </div>
+        <div className="navbar-links">
+          <a href="create-profile-link">Create Profile</a>
+          <a href="edit-profile-link">Edit Profile</a>
+          <a href="saved-profiles-link">Saved Profiles</a>
+        </div>
+      </div>
     </div>
   );
 }
