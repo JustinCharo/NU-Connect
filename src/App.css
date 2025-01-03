@@ -11,6 +11,7 @@
   padding: 10px 20px;
   background-color: #4e2a84;
   color: white;
+  position: relative;
 }
 
 .navbar-logo {
@@ -19,9 +20,12 @@
 }
 
 .navbar-search {
-  flex-grow: 1;
-  margin: 0 20px;
-  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
   justify-content: center;
 }
 
@@ -46,6 +50,10 @@
 
 .userProfile {
   display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 80%;
   flex-direction: column;
   align-items: center;
   padding: 20px;
@@ -78,7 +86,7 @@
 }
 
 .profile-description {
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 1.5;
   color: #333;
 }
