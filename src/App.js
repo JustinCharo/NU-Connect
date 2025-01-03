@@ -1,44 +1,65 @@
-import './App.css';
+import './css/App.css';
+import ProfileCard from './components/ProfileCard';
+import Buttons from './components/Buttons';
+import Navbar from './components/Navbar';
 import React from 'react';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
 
-  const [users, setUsers] = useState([]);
+  const [profiles, setProfiles] = useState([]);
 
-  return (
-    <div className="app">
-      <div className="navbar">
-        <div className="navbar-logo">NU CONNECT</div>
-        <div className="navbar-search">
-          <input type="text" placeholder="Search..." className="search-bar"/>
-        </div>
-        <div className="navbar-links">
-          <a href="create-profile-link">Create Profile</a>
-          <a href="edit-profile-link">Edit Profile</a>
-          <a href="saved-profiles-link">Saved Profiles</a>
-        </div>
-      </div>
-      <div className="userProfile">
-        <div className="profile-card">
-          <img
-            src="https://via.placeholder.com/300x300?text=Default+Profile+Picture"
-            alt="Profile-Picture"
-            className="profile-picture"
-          />
-          <h2 className="profile-name">John Doe</h2>
-          <p className="profile-description">
-            From: Evanston, IL<br/>
+  useEffect(() => {
+    setProfiles(users);
+  }, []);
+  const users = [
+    {
+      picture_url: "https://via.placeholder.com/300x300?text=Default+Profile+Picture",
+      id: 1,
+      name: "John Doe",
+      description: `From: Evanston, IL<br/>
             Hobbies: Reading, Writing, Hiking<br/>
             Traits: Funny, Outgoing, Adventurous<br/>
-            Major: Economics
-          </p>
-        </div>
-        <div className="button-container">
-          <button className="button">Make a new friend!</button>
-          <button className="button">Next Person</button>
-        </div>
+            Major: Theater`
+    },
+    {
+      picture_url: "https://via.placeholder.com/300x300?text=Default+Profile+Picture",
+      id: 2,
+      name: "Jane Doe",
+      description: `From: Dallas, TX<br/>
+            Hobbies: Coding, Running, Watching Movies<br/>
+            Traits: Charismatic, Brave, Annoying<br/>
+            Major: Computer Science`
+    },
+    {
+      picture_url: "https://via.placeholder.com/300x300?text=Default+Profile+Picture",
+      id: 3,
+      name: "Chad Powers",
+      description: `From: Los Angeles, CA<br/>
+            Hobbies: Reading, Writing, Hiking<br/>
+            Traits: Perfect, Amazing, Humble<br/>
+            Major: Economics`
+    },
+    {
+      picture_url: "https://via.placeholder.com/300x300?text=Default+Profile+Picture",
+      id: 4,
+      name: "LeBron James",
+      description: `From: Akron, OH<br/>
+            Hobbies: Reading, Writing, Hiking<br/>
+            Traits: Athletic, GOAT, Perfect Human<br/>
+            Major: Learning and Organizational Change`
+    },
+  ];
+
+  return (
+    <div className="App">
+      <Navbar />
+      <div className="profiles-grid">
+        {profiles.map((profile) => (
+          <ProfileCard profile={profile} key={profile.id} />
+        ))}
       </div>
+      <Buttons />
     </div>
   );
 }
