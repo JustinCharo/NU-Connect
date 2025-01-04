@@ -14,7 +14,7 @@
   justify-content: center;
 }
 
-.search-container {
+.search-form {
   position: absolute;
   top: 10px;
   left: 50%;
@@ -24,7 +24,7 @@
   justify-content: center;
 }
 
-.search-bar {
+.search-input {
   width: 100%;
   max-width: 400px;
   padding: 8px;
