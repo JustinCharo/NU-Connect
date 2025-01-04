@@ -10,7 +10,7 @@ function Navbar() {
       <div className="navbar-links">
         <a href="create-profile-link">Create Profile</a>
         <a href="edit-profile-link">Edit Profile</a>
-        <a href="saved-profiles-link">Saved Profiles</a>
+        <a href="favorites-link">Saved Profiles</a>
       </div>
     </div>
   )
