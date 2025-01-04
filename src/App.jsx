@@ -1,10 +1,13 @@
 import Home from "./pages/Home"
 import Favorites from "./pages/Favorites"
 import Create from "./pages/Create"
+import Navbar from "./components/Navbar"
 import {Routes, Route} from "react-router-dom"
 
 function App() {
     return (
+        <div>
+            <Navbar />
         <main className="main-content">
             <Routes>
                 <Route path="/" element={<Home />}/>
@@ -12,6 +15,7 @@ function App() {
                 <Route path="/create" element={<Create />}/>
             </Routes>
         </main>
+        </div>
     );
 }
 
