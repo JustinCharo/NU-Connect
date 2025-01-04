@@ -53,6 +53,9 @@ function Home() {
   return (
     <div className="HomePage">
       <Navbar />
+      <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Search..."/>
+      </div>
       <div className="profiles-grid">
         {profiles.map((profile) => (
           <ProfileCard profile={profile} key={profile.id} />
