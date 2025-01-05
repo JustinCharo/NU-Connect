@@ -1,9 +1,18 @@
 import "../css/ProfileCard.css";
+import { useProfileContext } from "../contexts/ProfileContext";
 
 function ProfileCard({profile}) {
+  
+  const {isFavorite, addToFavorites, removeFromFavorites} = useProfileContext();
+  const favorite = isFavorite(profile.id);
 
-  function saveProfile() {
-    console.log('Profile Saved!');
+  function saveProfile(e) {
+    e.preventDefault();
+    if (favorite) {
+      removeFromFavorites(profile.id);
+    } else {
+      addToFavorites(profile);
+    }
   }
   
   return (
@@ -19,14 +28,14 @@ function ProfileCard({profile}) {
         </div>
         <div className="profile-description">
           <div>
-            Email: {profile.email}
-            Bio: {profile.bio}
-            Major: {profile.major}
+            Email: {profile.email}{"\n"}
+            Bio: {profile.bio}{"\n"}
+            Major: {profile.major}{"\n"}
             Graduation Year: {profile.graduationyear}
           </div>
         </div>
         <div className="button-container">
-          <button className="button" onClick={saveProfile}>Make a new friend!</button>
+          <button className={`favorite-button ${favorite ? "button-pressed" : ""}`} onClick={saveProfile}>{`${favorite ? "Unsave Profile!" : "Make a new friend!"}`}</button>
         </div>
       </div>
     </div>

@@ -1,7 +1,30 @@
+import "../css/Favorites.css";
+import { useProfileContext } from "../contexts/ProfileContext";
+import ProfileCard from "../components/ProfileCard";
+
 function Favorites() {
+    const {favorites} = useProfileContext();
+
+    if (favorites) {
+        return (
+            <div>
+                <div className="favorites-header">
+                    <div>Saved Profiles</div>
+                </div>
+                <div className="profiles-grid">
+                    {favorites.map((profile) => (
+                    <ProfileCard profile={profile} key={profile.id} />
+                    )
+                )}
+                </div>
+            </div>
+           
+        );
+    }
+
     return (
-        <div className="saved-empty">
-            <h1>No Saved Profiles Yet</h1>
+        <div className="favorites-empty">
+            <div>No Saved Profiles Yet</div>
         </div>
     )
 }

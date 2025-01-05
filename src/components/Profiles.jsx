@@ -1,6 +1,6 @@
 import ProfileCard from './ProfileCard.jsx';
 import { useState, useEffect } from 'react';
-import { getAllUsers, getUserByID } from '../services/api.js';
+import { getAllUsers } from '../services/api.js';
 function Profiles () {
 
     const [profiles, setProfiles] = useState([]);

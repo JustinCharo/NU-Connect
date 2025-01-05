@@ -48,7 +48,7 @@
     margin-bottom: 20px;
 }
 
-.button {
+.favorite-button {
     padding: 10px 20px;
     background: #4e2a84;
     color: white;
@@ -57,6 +57,14 @@
     font-size: 16px;
 }
 
-.button:hover {
+.button-pressed {
     background: #3b2064;
+}
+
+.favorite-button:hover {
+    background: #3b2064;
+}
+
+.button-pressed:hover {
+    background: #4e2a84;
 }

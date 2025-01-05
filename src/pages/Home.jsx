@@ -1,8 +1,6 @@
 import '../css/Home.css';
 import Profiles from '../components/Profiles';
 import React from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function Home() {
   return (

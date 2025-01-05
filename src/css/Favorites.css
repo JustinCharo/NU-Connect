@@ -1,0 +1,11 @@
+.favorites-header {
+    font-size: 40px;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.favorites-empty {
+    font-size: 40px;
+    justify-content: center;
+    font-weight: bold;
+}
