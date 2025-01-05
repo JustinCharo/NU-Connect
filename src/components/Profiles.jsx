@@ -1,7 +1,7 @@
 import ProfileCard from './ProfileCard.jsx';
 import { useState, useEffect } from 'react';
 import { getAllUsers, getUserByID } from '../services/api.js';
-export default function Profiles () {
+function Profiles () {
 
     const [profiles, setProfiles] = useState([]);
     const [error, setError] = useState(null);
@@ -29,7 +29,10 @@ export default function Profiles () {
         <div className="profiles-grid">
             {profiles.map((profile) => (
                 <ProfileCard profile={profile} key={profile.id} />
-        ))}
+            )
+        )}
         </div>
     )
 }
+
+export default Profiles
