@@ -7,6 +7,7 @@ function Profiles () {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    // Loads all users/profiles
     useEffect(() => {
         const loadAllUsers = async () => {
             try {
@@ -25,6 +26,7 @@ function Profiles () {
         loadAllUsers();
     }, []);
 
+    // Returns each profile as a ProfileCard component
     return (
         <div className="profiles-grid">
             {profiles.map((profile) => (

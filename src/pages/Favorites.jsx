@@ -5,6 +5,7 @@ import ProfileCard from "../components/ProfileCard";
 function Favorites() {
     const {favorites} = useProfileContext();
 
+    // Renders each of the favorited profiles
     if (favorites) {
         return (
             <div>
@@ -22,6 +23,7 @@ function Favorites() {
         );
     }
 
+    // If there are no favorited profiles, returns
     return (
         <div className="favorites-empty">
             <div>No Saved Profiles Yet</div>

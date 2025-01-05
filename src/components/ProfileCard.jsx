@@ -3,9 +3,11 @@ import { useProfileContext } from "../contexts/ProfileContext";
 
 function ProfileCard({profile}) {
   
+  // Creates state variables
   const {isFavorite, addToFavorites, removeFromFavorites} = useProfileContext();
   const favorite = isFavorite(profile.id);
 
+  // Saves or removes profile from favorites depending on the current state
   function saveProfile(e) {
     e.preventDefault();
     if (favorite) {
@@ -15,6 +17,7 @@ function ProfileCard({profile}) {
     }
   }
   
+  // Returns the profile card
   return (
     <div className="userProfile">
       <div className="profile-card">

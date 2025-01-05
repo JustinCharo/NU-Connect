@@ -4,6 +4,7 @@ import { createUser } from "../services/api";
 
 function Create() {
 
+    // Sets initial state for form data
     const [formData, setFormData] = useState({
         firstname: "",
         lastname: "",
@@ -14,20 +15,24 @@ function Create() {
         image: null
     });
 
+    // Updates form data when it changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
+    // Updates form data when a file is selected
     const handleFileChange = (e) => {
         setFormData({ ...formData, image: e.target.files[0] });
     }
 
+    // Submits form data to create a new profile
     const handleSubmit = async (e) => {
         e.preventDefault();
         createUser(formData);
     };
 
+    // Returns the form to create a new profile
     return (
         <div className="create-profile">
             <h1>Create A New Profile</h1>
